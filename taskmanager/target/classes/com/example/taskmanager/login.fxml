@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanager.controllers.LoginController">
+   <children>
+      <Button fx:id="btEntrar" layoutX="516.0" layoutY="417.0" mnemonicParsing="false" onAction="#useBtEntrar" text="Entrar" />
+      <Button fx:id="btCadastrar" layoutX="390.0" layoutY="400.0" mnemonicParsing="false" onAction="#useBtCadastrar" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: white;" text="Cadastrar Aqui" textAlignment="JUSTIFY" textFill="DEEPSKYBLUE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="txSenha" layoutX="401.0" layoutY="348.0" prefHeight="30.0" prefWidth="279.0" promptText="Senha" />
+      <Label layoutX="401.0" layoutY="383.0" text="Não tem login?" textFill="#00bfff" />
+      <Label layoutX="412.0" layoutY="140.0" prefHeight="104.0" prefWidth="256.0" text="Gerenciador de Tarefas" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Monospaced Bold" size="30.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txMatricula" layoutX="401.0" layoutY="295.0" prefHeight="30.0" prefWidth="279.0" promptText="Matrícula" />
+   </children>
+</AnchorPane>

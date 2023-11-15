@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: white" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanager.controllers.TelaInicialController">
+   <children>
+      <MenuBar prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="693.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="946.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem fx:id="btCriarTarefa" mnemonicParsing="false" onAction="#useBtCriarTarefa" text="Criar Nova Tarefa" />
+                  <MenuItem fx:id="btEditarTaefa" mnemonicParsing="false" onAction="#useBtEditarTarefa" text="Editar Tarefa" />
+                  <MenuItem fx:id="btRemoverTarefa" mnemonicParsing="false" onAction="#useBtRemoverTarefa" text="Remover Tarefa" />
+                  <MenuItem fx:id="btCompleteTarefa" mnemonicParsing="false" onAction="#useBtCompleteTarefa" text="Concluir Tarefa" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Logout">
+              <items>
+                <MenuItem fx:id="btSair" mnemonicParsing="false" onAction="#useBtSair" text="Sair" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
