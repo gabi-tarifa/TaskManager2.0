@@ -1,15 +1,30 @@
 package com.example.taskmanager.model;
 
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+
+@Entity
+@Table
 public class Disciplina {
-    private String nome;
-    private String codigo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int idbase;
+    @Column(unique = true)
+    private String nome;
+    @Column(unique = true)
+    private String codigo;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "disciplina")
+    @JoinColumn(name = "idDisciplina")
+    private ArrayList<Tarefa> tarefas = new ArrayList<>();
 
     public Disciplina(String nome, String codigo) {
         this.nome = nome;
-        this.id = idbase++;
         this.codigo = codigo;
+    }
+
+    public Disciplina() {
+
     }
 
     public String getCodigo() {

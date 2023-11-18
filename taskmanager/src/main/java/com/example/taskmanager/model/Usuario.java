@@ -1,6 +1,8 @@
 package com.example.taskmanager.model;
 
 import jakarta.persistence.*;
+import org.hibernate.engine.internal.Cascade;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.LocalDateTime;
@@ -21,10 +23,9 @@ public class Usuario {
     @Column
     private String senha;
     private boolean logado = false;
-    @Column
-    @OneToMany
-    private Tarefa tarefa;
-    //private ArrayList<Tarefa> tarefas = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    @JoinColumn(name = "idTarefa")
+    private ArrayList<Tarefa> tarefas = new ArrayList<>();
 
     public Usuario(String nome, String matricula, String senha) {
         this.nome = nome;
@@ -51,10 +52,10 @@ public class Usuario {
         return id;
     }
 
-    /*public ArrayList<Tarefa> getTarefas() {
+    public ArrayList<Tarefa> getTarefas() {
         return tarefas;
     }
-    */
+
 
     public boolean login(String matricula, String senha) {
         if (matricula.equals(this.matricula) && senha.equals(this.senha)) {
@@ -119,7 +120,7 @@ public class Usuario {
         return false;
     }
 
-    /*public void addTarefa(Tarefa tarefa) {
+    public void addTarefa(Tarefa tarefa) {
         if (logado) {
             tarefas.add(tarefa);
         } else {
@@ -172,6 +173,5 @@ public class Usuario {
         for (int i = 0; i < tarefas.size(); i++) {
         }
 
-    }*/
-
+    }
 }

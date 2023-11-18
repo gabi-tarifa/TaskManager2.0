@@ -12,7 +12,6 @@
           <Menu mnemonicParsing="false" text="Edit">
             <items>
               <MenuItem fx:id="btCriarTarefa" mnemonicParsing="false" onAction="#useBtCriarTarefa" text="Criar Nova Tarefa" />
-                  <MenuItem fx:id="btEditarTaefa" mnemonicParsing="false" onAction="#useBtEditarTarefa" text="Editar Tarefa" />
                   <MenuItem fx:id="btRemoverTarefa" mnemonicParsing="false" onAction="#useBtRemoverTarefa" text="Remover Tarefa" />
                   <MenuItem fx:id="btCompleteTarefa" mnemonicParsing="false" onAction="#useBtCompleteTarefa" text="Concluir Tarefa" />
             </items>

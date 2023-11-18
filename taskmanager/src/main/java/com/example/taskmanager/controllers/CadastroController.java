@@ -2,11 +2,15 @@ package com.example.taskmanager.controllers;
 
 import com.example.taskmanager.HelloApplication;
 import com.example.taskmanager.model.Usuario;
+import com.example.taskmanager.util.HibernateUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 
 public class CadastroController {
 
@@ -31,18 +35,21 @@ public class CadastroController {
     private String confirmSenha = "";
     private String senha = "";
     private String matricula = "";
-
     private String nome = "";
 
     @FXML
-    void useBtCriarUsuario(ActionEvent event) {
+    void  useBtCriarUsuario(ActionEvent event) {
         lblConfirmSenha.setText("");
-        confirmSenha = txtConfirmSenha.getText();
-        senha = txtSenha.getText();
-        nome = txtNome.getText();
-        matricula = txtMatricula.getText();
+        this.confirmSenha = txtConfirmSenha.getText();
+        this.senha = txtSenha.getText();
+        this.nome = txtNome.getText();
+        this.matricula = txtMatricula.getText();
         if(confirmSenha.equals(senha)) {
-            //Usuario u = new Usuario(nome, matricula, senha);
+            Usuario u = new Usuario(nome, matricula, senha);
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            Transaction transaction = session.beginTransaction();
+            session.persist(u);
+            transaction.commit();
             HelloApplication.altercateTells("login");
         }else{
             lblConfirmSenha.setText("As senhas não conferem, tente novamente.");

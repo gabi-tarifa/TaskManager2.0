@@ -15,9 +15,6 @@ public class TelaInicialController {
     private MenuItem btCriarTarefa;
 
     @FXML
-    private MenuItem btEditarTaefa;
-
-    @FXML
     private MenuItem btRemoverTarefa;
 
     @FXML
@@ -38,11 +35,6 @@ public class TelaInicialController {
 
     @FXML
     void useBtCriarTarefa(ActionEvent event) {
-
-    }
-
-    @FXML
-    void useBtEditarTarefa(ActionEvent event) {
 
     }
 

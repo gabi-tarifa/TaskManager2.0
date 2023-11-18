@@ -3,6 +3,7 @@ package com.example.taskmanager.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 @Entity
 @Table
@@ -14,10 +15,12 @@ public class Tarefa {
     private String nome;
     @Column
     private LocalDateTime dataHoraVencimento;
-    @Column
+    @ManyToOne(cascade = CascadeType.ALL)
     private Categoria categoria;
-    @Column
+    @ManyToOne(cascade = CascadeType.ALL)
     private Disciplina disciplina;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Usuario usuario;
 
     private boolean concluida = false;
     private boolean vencida = false;
@@ -97,5 +100,7 @@ public class Tarefa {
     public void setAtrasada(boolean atrasada) {
         this.atrasada = atrasada;
     }
+
 }
+
 
