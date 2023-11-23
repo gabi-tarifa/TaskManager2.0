@@ -13,8 +13,8 @@
       </Label>
       <TextField fx:id="txtNome" layoutX="389.0" layoutY="189.0" prefHeight="25.0" prefWidth="302.0" />
       <TextField fx:id="txtMatricula" layoutX="389.0" layoutY="253.0" prefHeight="25.0" prefWidth="302.0" />
-      <TextField fx:id="txtSenha" layoutX="389.0" layoutY="320.0" prefHeight="25.0" prefWidth="302.0" />
-      <TextField fx:id="txtConfirmSenha" layoutX="389.0" layoutY="389.0" prefHeight="25.0" prefWidth="302.0" />
+      <PasswordField fx:id="txtSenha" layoutX="389.0" layoutY="320.0" prefHeight="25.0" prefWidth="302.0" />
+      <PasswordField fx:id="txtConfirmSenha" layoutX="389.0" layoutY="389.0" prefHeight="25.0" prefWidth="302.0" />
       <Label layoutX="389.0" layoutY="164.0" prefHeight="25.0" prefWidth="50.0" text="Nome:">
          <font>
             <Font name="Microsoft Tai Le" size="15.0" />

@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanager.controllers.CriarTarefaController">
+   <children>
+      <Label layoutX="406.0" layoutY="79.0" text="Criar Nova Tarefa">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <RadioButton id="RDArquitetura" fx:id="rdARQ" layoutX="623.0" layoutY="305.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Arquitetura" toggleGroup="$disciplinas" />
+      <RadioButton id="RDBiologia" fx:id="rdBIO" layoutX="496.0" layoutY="423.0" mnemonicParsing="false" onAction="#selectDisciplina" prefHeight="17.0" prefWidth="87.0" text="Biologia" toggleGroup="$disciplinas" />
+      <RadioButton id="RDComputacao" fx:id="rdCOM" layoutX="339.0" layoutY="277.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Computação" toggleGroup="$disciplinas" />
+      <RadioButton id="RDConstucao" fx:id="rdCON" layoutX="623.0" layoutY="417.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Construção" toggleGroup="$disciplinas" />
+      <RadioButton id="RDEletronica" fx:id="rdELE" layoutX="496.0" layoutY="305.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Eletrônica" toggleGroup="$disciplinas" />
+      <RadioButton id="RDProducao" fx:id="rdPDT" layoutX="623.0" layoutY="389.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Produção de Texto" toggleGroup="$disciplinas" />
+      <RadioButton id="RDHistoria" fx:id="rdHIS" layoutX="339.0" layoutY="389.0" mnemonicParsing="false" onAction="#selectDisciplina" text="História" toggleGroup="$disciplinas" />
+      <RadioButton id="RDLExtrangeiras" fx:id="rdLEX" layoutX="623.0" layoutY="277.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Línguas Extrangeiras">
+         <toggleGroup>
+            <ToggleGroup fx:id="disciplinas" />
+         </toggleGroup></RadioButton>
+      <RadioButton id="RDLPortuguesa" fx:id="rdPOR" layoutX="339.0" layoutY="417.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Língua Portuguesa" toggleGroup="$disciplinas" />
+      <RadioButton id="RDFisica" fx:id="rdFIS" layoutX="496.0" layoutY="333.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Física" toggleGroup="$disciplinas" />
+      <RadioButton id="RDFilosofia" fx:id="rdFIL" layoutX="496.0" layoutY="389.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Filosofia" toggleGroup="$disciplinas" />
+      <RadioButton id="RDSociologia" fx:id="rdSOC" layoutX="496.0" layoutY="277.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Sociologia" toggleGroup="$disciplinas" />
+      <RadioButton id="RDGeografia" fx:id="rdGEO" layoutX="339.0" layoutY="361.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Geografia" toggleGroup="$disciplinas" />
+      <RadioButton id="RDMatematica" fx:id="rdMAT" layoutX="623.0" layoutY="361.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Matemática" toggleGroup="$disciplinas" />
+      <RadioButton id="RDTelecomunicacoes" fx:id="rdTEL" layoutX="623.0" layoutY="333.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Telecomunicações" toggleGroup="$disciplinas" />
+      <RadioButton id="RDMecanica" fx:id="rdMEC" layoutX="339.0" layoutY="333.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Mecânica" toggleGroup="$disciplinas" />
+      <RadioButton id="RDQuimica" fx:id="rdQUI" layoutX="339.0" layoutY="305.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Química" toggleGroup="$disciplinas" />
+      <RadioButton id="RDJogos" fx:id="rdJOG" layoutX="496.0" layoutY="361.0" mnemonicParsing="false" onAction="#selectDisciplina" text="Jogos" toggleGroup="$disciplinas" />
+      <Label layoutX="377.0" layoutY="458.0" text="Categoria:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="377.0" layoutY="256.0" text="Disciplina:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="377.0" layoutY="190.0" text="Nome:">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button id="btCriarCategoria" fx:id="btCriarCategoria" blendMode="DARKEN" cache="true" layoutX="568.0" layoutY="456.0" mnemonicParsing="false" onAction="#criarCategoria" pickOnBounds="false" prefHeight="30.0" prefWidth="138.0" style="-fx-text-fill: black; -fx-background-color: white;" text="Criar Nova Categoria">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button id="btCriarTarefa" fx:id="btCriarTarefa" layoutX="498.0" layoutY="563.0" mnemonicParsing="false" onAction="#crairTarefa" style="-fx-background-color: White; -fx-text-fill: Black;" text="Criar Tarefa" />
+      <TextField id="txtNome" fx:id="txtNome" layoutX="377.0" layoutY="215.0" prefHeight="27.0" prefWidth="326.0" />
+      <RadioButton id="RDUrgente" fx:id="rdUrgente" layoutX="582.0" layoutY="524.0" mnemonicParsing="false" onAction="#rdUrgenteCheck" text="Urgente" />
+      <RadioButton id="RDImportante" fx:id="rdImportante" layoutX="436.0" layoutY="524.0" mnemonicParsing="false" onAction="#rdImportanteCheck" text="Importante" />
+      <TextField fx:id="txtCategoria" layoutX="377.0" layoutY="483.0" prefHeight="27.0" prefWidth="326.0" />
+      <Label fx:id="txtCat404" layoutX="379.0" layoutY="510.0" prefHeight="18.0" prefWidth="326.0" textFill="RED" />
+      <Label fx:id="txtDis404" layoutX="452.0" layoutY="260.0" prefHeight="18.0" prefWidth="245.0" textFill="RED" />
+   </children>
+</AnchorPane>

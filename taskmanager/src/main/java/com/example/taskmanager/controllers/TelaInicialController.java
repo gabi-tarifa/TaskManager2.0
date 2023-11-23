@@ -8,39 +8,21 @@ import javafx.scene.control.MenuItem;
 
 public class TelaInicialController {
 
-    @FXML
-    private MenuItem btCompleteTarefa;
 
-    @FXML
-    private MenuItem btCriarTarefa;
-
-    @FXML
-    private MenuItem btRemoverTarefa;
-
-    @FXML
-    private MenuItem btSair;
-
+    public MenuItem btCriarTarefa;
+    public MenuItem btSair;
     @FXML
     private Label lblNomePerfil;
 
-    @FXML
-    void useBtRemoverTarefa(ActionEvent event) {
-
-    }
-
-    @FXML
-    void useBtCompleteTarefa(ActionEvent event) {
-
-    }
 
     @FXML
     void useBtCriarTarefa(ActionEvent event) {
-
+        HelloApplication.altercateTells("telaCriarTarefa");
     }
 
     @FXML
     void useBtSair(ActionEvent event) {
-        HelloApplication.altercateTells("login");
+        HelloApplication.altercateTells("telaDisciplinaArq");
     }
 
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.engine.internal.Cascade;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.time.LocalDateTime;
 
@@ -23,9 +24,8 @@ public class Usuario {
     @Column
     private String senha;
     private boolean logado = false;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
-    @JoinColumn(name = "idTarefa")
-    private ArrayList<Tarefa> tarefas = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Tarefa> tarefas = new ArrayList<>();
 
     public Usuario(String nome, String matricula, String senha) {
         this.nome = nome;
@@ -52,9 +52,10 @@ public class Usuario {
         return id;
     }
 
-    public ArrayList<Tarefa> getTarefas() {
+    public List<Tarefa> getTarefas() {
         return tarefas;
     }
+    /*
 
 
     public boolean login(String matricula, String senha) {
@@ -173,5 +174,5 @@ public class Usuario {
         for (int i = 0; i < tarefas.size(); i++) {
         }
 
-    }
+    }*/
 }

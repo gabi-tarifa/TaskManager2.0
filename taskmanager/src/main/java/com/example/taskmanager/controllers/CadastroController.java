@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -21,7 +22,7 @@ public class CadastroController {
     private Label lblConfirmSenha;
 
     @FXML
-    private TextField txtConfirmSenha;
+    private PasswordField txtConfirmSenha;
 
     @FXML
     private TextField txtMatricula;
@@ -30,26 +31,26 @@ public class CadastroController {
     private TextField txtNome;
 
     @FXML
-    private TextField txtSenha;
-
-    private String confirmSenha = "";
-    private String senha = "";
-    private String matricula = "";
-    private String nome = "";
+    private PasswordField txtSenha;
 
     @FXML
     void  useBtCriarUsuario(ActionEvent event) {
         lblConfirmSenha.setText("");
-        this.confirmSenha = txtConfirmSenha.getText();
-        this.senha = txtSenha.getText();
-        this.nome = txtNome.getText();
-        this.matricula = txtMatricula.getText();
+        String confirmSenha = txtConfirmSenha.getText();
+        String senha = txtSenha.getText();
+        String nome = txtNome.getText();
+        String matricula = txtMatricula.getText();
         if(confirmSenha.equals(senha)) {
             Usuario u = new Usuario(nome, matricula, senha);
             Session session = HibernateUtil.getSessionFactory().openSession();
             Transaction transaction = session.beginTransaction();
             session.persist(u);
             transaction.commit();
+            session.close();
+            txtConfirmSenha.setText("");
+            txtSenha.setText("");
+            txtMatricula.setText("");
+            txtNome.setText("");
             HelloApplication.altercateTells("login");
         }else{
             lblConfirmSenha.setText("As senhas não conferem, tente novamente.");

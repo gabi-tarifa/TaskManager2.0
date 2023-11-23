@@ -3,6 +3,7 @@ package com.example.taskmanager.model;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -15,9 +16,8 @@ public class Categoria {
     @Column(unique = true)
     private String codigo;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
-    @JoinColumn(name = "idCategoria")
-    private ArrayList<Tarefa> tarefas = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Tarefa> tarefas = new ArrayList<>();
 
     public Categoria(String nome, String codigo) {
         this.nome = nome;

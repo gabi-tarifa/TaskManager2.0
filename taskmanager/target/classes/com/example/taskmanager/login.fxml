@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanager.controllers.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taskmanager.controllers.LoginController">
    <children>
       <Button fx:id="btEntrar" layoutX="516.0" layoutY="417.0" mnemonicParsing="false" onAction="#useBtEntrar" text="Entrar" />
       <Button fx:id="btCadastrar" layoutX="390.0" layoutY="400.0" mnemonicParsing="false" onAction="#useBtCadastrar" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: white;" text="Cadastrar Aqui" textAlignment="JUSTIFY" textFill="DEEPSKYBLUE">
@@ -20,5 +23,6 @@
          </font>
       </Label>
       <TextField fx:id="txMatricula" layoutX="401.0" layoutY="295.0" prefHeight="30.0" prefWidth="279.0" promptText="Matrícula" />
+      <Label fx:id="lblMatrSenIncorretos" layoutX="516.0" layoutY="383.0" prefHeight="17.0" prefWidth="165.0" textFill="RED" />
    </children>
 </AnchorPane>

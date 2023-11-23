@@ -2,6 +2,7 @@ package com.example.taskmanager.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
 
@@ -14,44 +15,47 @@ public class Tarefa {
     @Column
     private String nome;
     @Column
-    private LocalDateTime dataHoraVencimento;
+    private boolean importante;
+    @Column
+    private boolean urgente;
+
+
+    //@Column
+    //private LocalDate dataVencimento;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idCategoria")
     private Categoria categoria;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idDisciplina")
     private Disciplina disciplina;
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idUsuario")
     private Usuario usuario;
 
     private boolean concluida = false;
     private boolean vencida = false;
     private boolean atrasada = false;
 
-    public Tarefa(String nome, Categoria categoria, Disciplina disciplina, LocalDateTime dataHoraVencimento) {
+    public Tarefa(String nome, Categoria categoria, Disciplina disciplina, boolean urgente, boolean importante/*, LocalDate dataVencimento*/) {
         this.nome = nome;
         this.categoria = categoria;
         this.disciplina = disciplina;
-        this.dataHoraVencimento = dataHoraVencimento;
+        this.urgente = urgente;
+        this.importante = importante;
+        //this.dataVencimento = dataVencimento;
     }
 
     public Tarefa() {
 
     }
 
-    public boolean isVencida() {
+    /*public boolean isVencida() {
         return vencida;
     }
 
     public void setVencida(boolean vencida) {
         this.vencida = vencida;
-    }
-
-    public LocalDateTime getDataHoraVencimento() {
-        return dataHoraVencimento;
-    }
-
-    public void setDataHoraVencimento(LocalDateTime dataHoraVencimento) {
-        this.dataHoraVencimento = dataHoraVencimento;
-    }
+    }*/
 
     public Disciplina getDisciplina() {
         return disciplina;
